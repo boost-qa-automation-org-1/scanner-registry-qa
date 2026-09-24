@@ -160,6 +160,17 @@ steps:
       run: $SETUP_PATH/<executable>
 ```
 
+#### Scan Enrichment
+The optional enrichment section is a top-level key, next to `steps`. It runs once on the reduced scan document: the step reads the document on stdin and writes the enriched document to stdout. It accepts one step or a list of steps.
+```yaml
+enrichment:
+  docker:
+    image: <image>
+    command: <container command>
+    environment:
+      ENVVARIABLE: <value>
+```
+
 ## Module Rules
 Module rules are used to enrich the findings to ensure the policy processing per proper group or categories as well as the proper display of the description in the Boostsecurity platform. 
 
